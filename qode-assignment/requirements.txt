@@ -1,0 +1,10 @@
+selenium==4.21.0
+textblob==0.17.1
+beautifulsoup4
+pandas
+pyarrow
+scikit-learn
+matplotlib
+datashader
+gensim
+spacy
