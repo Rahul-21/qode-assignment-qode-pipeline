@@ -1,0 +1,14 @@
+services:
+  qode-pipeline:
+    build: .
+    container_name: qode_pipeline
+    platform: linux/amd64   # avoids flaky arm64 builds on M1/M2 Macs
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+    environment:
+      - REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
+      - SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt
+      - TWITTER_USER=your_username
+      - TWITTER_PASS=your_password
+    restart: always
